@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+
+main {
+    height: 35rem;
+    width: 55rem;
+    background-color: white;
+    margin: 2rem 15rem 2rem 15rem;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 55rem;
+    margin-bottom: 3rem;
+}
+
+
+section>div {
+    background-color: skyblue;
+    height: 3rem;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+article {
+    margin-bottom: 5rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+aside>div {
+    width: 15rem;
+}
