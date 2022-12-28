@@ -1,13 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
+    background-color: white;
 }
 
 main {
     height: 35rem;
     width: 55rem;
-    background-color: white;
+    background-color: #caf0f8;
     margin: 2rem 15rem 2rem 15rem;
     text-align: center;
 }
@@ -22,10 +22,11 @@ section {
 
 
 section>div {
-    background-color: skyblue;
-    height: 3rem;
-    width: 9rem;
+    background-color: white;
+    height: 2rem;
+    width: 7rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 3rem;
     padding: 1rem;
@@ -36,6 +37,38 @@ article {
     margin-bottom: 5rem;
 }
 
+input {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem;
+    width: 16rem;
+    margin: 0.5rem;
+}
+
+#incomebtn {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #007f5f;
+    color: white;
+}
+
+#expensebtn {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.4rem;
+    background-color: #d90429;
+    color: white;
+}
+
+#amount {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem;
+    background-color: white;
+}
+
 aside {
     display: flex;
     flex-direction: row;
@@ -44,4 +77,18 @@ aside {
 
 aside>div {
     width: 15rem;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: large;
+    margin: 0.2rem 0rem 0rem 0rem;
+}
+
+#green {
+    color: #007f5f;
+}
+
+#red {
+    color: #d90429;
 }
