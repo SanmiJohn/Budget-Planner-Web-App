@@ -2,28 +2,23 @@ const IncomeButton = document.getElementById('incomebtn');
 const ExpenseButton = document.getElementById('expensebtn');
 let Description = document.getElementById('description')
 let Amount = document.getElementById('amount')
-const LI = document.getElementById('incomeadded')
-const LII = document.getElementById('expenseadded')
-let New = document.createElement('div')
-New.style.backgroundColor = 'white'
-New.style.width = '16rem'
-New.style.height = '2rem'
-New.style.borderRadius = '10px'
+let IncomeSpan = document.getElementById('incomespan')
+let AmountSpan = document.getElementById('amountspan')
+const IncomeAdded = document.getElementById('incomeadded')
+const ExpenseAdded = document.getElementById('expenseadded')
 
 function Income() {
-    let Neeew = LI.append(New)
-    Neeew.append(Description.value)
-    // LI.append(Amount.value)
-    // Description.value = ''
-    // Amount.value = ''
+    IncomeAdded.style.backgroundColor = 'white'
+
+    IncomeSpan.innerText = Description.value
+    Description.value = ''
+
+    AmountSpan.innerText = Amount.value
+    Amount.value = ''
 }
 
 function Expense() {
-    let Neew = LII.append(New)
-    Neew.append(Description.value)
-    // LI.append(Amount.value)
-    // Description.value = ''
-    // Amount.value = ''
+    // ExpenseAdded.append(Now)
 }
 
 IncomeButton.addEventListener('click', Income)

@@ -92,3 +92,23 @@ h2 {
 #red {
     color: #d90429;
 }
+
+#incomespan {
+    margin-left: -2rem;
+}
+
+#amountspan {
+    margin-right: -2rem;
+    color: #007f5f;
+    font-weight: bold;
+}
+
+#incomeadded {
+    width: 16rem;
+    height: 1.5rem;
+    border-radius: 10px;
+    padding-top: 0.3rem;
+
+    display: flex;
+    justify-content: space-around;
+}
