@@ -12,11 +12,19 @@
 <body>
     <main>
         <section>
-            <div>Money Earned <h2 id="green">$0.00</h2>
+            <div>Money Earned 
+                <h2 class="green">
+                    <span>$</span>
+                    <span id="incomeAmount">0.00</span>
+                </h2>
             </div>
-            <div>Money Available <h2>$0.00</h2>
+            <div>Money Available 
+                <h2>
+                    <span>$</span>
+                    <span id="incomeAmount">0.00</span>
+                </h2>
             </div>
-            <div>Money Spent <h2 id="red">$0.00</h2>
+            <div>Money Spent <h2 class="red">$0.00</h2>
             </div>
         </section>
 
@@ -24,7 +32,8 @@
             <input type="text" placeholder="Description" id="description" required><input type="text"
                 placeholder="Amount" id="amount" required>
             <div>
-                <button id="incomebtn">Add Income</button><button id="expensebtn">Add Expense</button>
+                <button id="incomebtn">Add Income</button>
+                <button id="expensebtn">Add Expense</button>
             </div>
         </article>
 

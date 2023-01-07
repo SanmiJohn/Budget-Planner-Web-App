@@ -4,6 +4,7 @@ let Description = document.getElementById('description')
 let Amount = document.getElementById('amount')
 const IncomeAdded = document.getElementById('incomeadded')
 const ExpenseAdded = document.getElementById('expenseadded')
+const incomeAmount = document.getElementById('incomeAmount')
 let Green = document.getElementById('green')
 let Black = document.getElementById('black')
 let Red = document.getElementById('red')
@@ -35,11 +36,12 @@ function Income() {
         newIncomeDiv.append(newAmountSpan)
 
         IncomeAdded.append(newIncomeDiv)
-        Green.innerText = Amount.value
+
+        const prevIncomeAmount = incomeAmount.innerHTML
+        incomeAmount.innerHTML = parseInt(prevIncomeAmount) + Number(Amount.value)
 
         Description.value = ''
         Amount.value = ''
-
     } else if (Description.value) {
         alert('Input Amount')
     } else if (Amount.value) {
