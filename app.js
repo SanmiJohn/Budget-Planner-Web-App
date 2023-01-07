@@ -4,6 +4,9 @@ let Description = document.getElementById('description')
 let Amount = document.getElementById('amount')
 const IncomeAdded = document.getElementById('incomeadded')
 const ExpenseAdded = document.getElementById('expenseadded')
+let Green = document.getElementById('green')
+let Black = document.getElementById('black')
+let Red = document.getElementById('red')
 
 IncomeButton.addEventListener('click', Income)
 ExpenseButton.addEventListener('click', Expense)
@@ -32,8 +35,11 @@ function Income() {
         newIncomeDiv.append(newAmountSpan)
 
         IncomeAdded.append(newIncomeDiv)
+        Green.innerText = Amount.value
+
         Description.value = ''
         Amount.value = ''
+
     } else if (Description.value) {
         alert('Input Amount')
     } else if (Amount.value) {
@@ -60,13 +66,14 @@ function Expense() {
 
         let newAmountSpan = document.createElement('span')
         newAmountSpan.style.marginLeft = '4rem'
-        newAmountSpan.style.color = '#007f5f'
+        newAmountSpan.style.color = '#d90429'
         newAmountSpan.innerText = Amount.value
 
         newExpenseDiv.append(newDescriptionSpan)
         newExpenseDiv.append(newAmountSpan)
 
         ExpenseAdded.append(newExpenseDiv)
+        Red.innerText = Amount.value
         Description.value = ''
         Amount.value = ''
     }
