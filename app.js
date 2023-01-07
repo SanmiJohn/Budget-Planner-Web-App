@@ -38,7 +38,7 @@ function Income() {
         IncomeAdded.append(newIncomeDiv)
 
         const prevIncomeAmount = incomeAmount.innerHTML // initial it will be 0.00
-        incomeAmount.innerHTML = parseInt(prevIncomeAmount) + Number(Amount.value)
+        incomeAmount.innerHTML = new Intl.NumberFormat().format(parseInt(prevIncomeAmount) + Number(Amount.value))
 
         Description.value = ''
         Amount.value = ''
