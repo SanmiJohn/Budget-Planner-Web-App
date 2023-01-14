@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <span>$</span>
+    <span id="money-value">0.00</span>
+ <br>
+    <input id="money-input" placeholder="amount" />
+
+    <button id="money-button">Add Money</button>
+  </div>
+
+  <script>
+    const moneyValue = document.getElementById('money-value')
+    const moneyInput = document.getElementById('money-input')
+    const moneyButton = document.getElementById('money-button')
+
+    moneyButton.addEventListener('click', () => {
+      let oldMoney = moneyValue.innerHTML
+      let newMoney = parseInt(oldMoney) + parseInt(moneyInput.value)
+      moneyValue.innerHTML = newMoney
+    })
+  </script>
+</body>
+</html>
