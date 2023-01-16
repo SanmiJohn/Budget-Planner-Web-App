@@ -4,10 +4,9 @@ let Description = document.getElementById('description')
 let Amount = document.getElementById('amount')
 const IncomeAdded = document.getElementById('incomeadded')
 const ExpenseAdded = document.getElementById('expenseadded')
-const incomeAmount = document.getElementById('incomeAmount')
-let Green = document.getElementById('green')
-let Black = document.getElementById('black')
-let Red = document.getElementById('red')
+let IncomeAmount = document.getElementById('incomeAmount')
+let ExpenseAmount = document.getElementById('expenseAmount')
+let AvailableAmount = document.getElementById('availableAmount')
 
 IncomeButton.addEventListener('click', Income)
 ExpenseButton.addEventListener('click', Expense)
@@ -37,8 +36,13 @@ function Income() {
 
         IncomeAdded.append(newIncomeDiv)
 
-        const prevIncomeAmount = incomeAmount.innerHTML // initial it will be 0.00
-        incomeAmount.innerHTML = new Intl.NumberFormat().format(parseInt(prevIncomeAmount) + Number(Amount.value))
+        let prevIncomeAmount = IncomeAmount.innerHTML // initial it will be 0.00
+        let newIncomeAmount = parseInt(prevIncomeAmount) + parseInt(Amount.value)
+        IncomeAmount.innerHTML = newIncomeAmount
+        let prevExpenseAmount = ExpenseAmount.innerHTML // initial it will be 0.00
+        let newExpenseAmount = parseInt(prevExpenseAmount)
+        ExpenseAmount.innerHTML = newExpenseAmount
+        AvailableAmount.innerHTML = parseInt(newIncomeAmount) - parseInt(newExpenseAmount)
 
         Description.value = ''
         Amount.value = ''
@@ -75,7 +79,15 @@ function Expense() {
         newExpenseDiv.append(newAmountSpan)
 
         ExpenseAdded.append(newExpenseDiv)
-        Red.innerText = Amount.value
+
+        let prevExpenseAmount = ExpenseAmount.innerHTML // initial it will be 0.00
+        let newExpenseAmount = parseInt(prevExpenseAmount) + parseInt(Amount.value)
+        ExpenseAmount.innerHTML = newExpenseAmount
+        let prevIncomeAmount = IncomeAmount.innerHTML // initial it will be 0.00
+        let newIncomeAmount = parseInt(prevIncomeAmount)
+        IncomeAmount.innerHTML = newIncomeAmount
+        AvailableAmount.innerHTML = parseInt(newIncomeAmount) - parseInt(newExpenseAmount)
+
         Description.value = ''
         Amount.value = ''
     }
