@@ -2,47 +2,39 @@ const IncomeButton = document.getElementById('incomebtn');
 const ExpenseButton = document.getElementById('expensebtn');
 let Description = document.getElementById('description')
 let Amount = document.getElementById('amount')
-const IncomeAdded = document.getElementById('incomeadded')
-const ExpenseAdded = document.getElementById('expenseadded')
+const ExpenseAdded = document.querySelector('.expenseadded')
 let IncomeAmount = document.getElementById('incomeAmount')
 let ExpenseAmount = document.getElementById('expenseAmount')
 let AvailableAmount = document.getElementById('availableAmount')
+let newIncomeDiv = document.querySelector('.newincomediv')
+const IncomeBar = document.getElementById('income')
+const ExpenseBar = document.getElementById('expense')
 
 IncomeButton.addEventListener('click', Income)
 ExpenseButton.addEventListener('click', Expense)
 
 function Income() {
     if (Description.value && Amount.value) {
-        let newIncomeDiv = document.createElement('div')
-        newIncomeDiv.style.backgroundColor = 'white'
-        newIncomeDiv.style.width = '16rem'
-        newIncomeDiv.style.height = '1.5rem'
-        newIncomeDiv.style.borderRadius = '1rem'
-        newIncomeDiv.style.marginBottom = '0.7rem'
-        newIncomeDiv.style.marginRight = '0.8rem'
-        newIncomeDiv.style.paddingTop = '0.3rem'
+
+        IncomeBar.classList.add('incomeadded')
 
         let newDescriptionSpan = document.createElement('span')
-        newDescriptionSpan.style.marginRight = '4rem'
-        newDescriptionSpan.innerText = Description.value
-
         let newAmountSpan = document.createElement('span')
-        newAmountSpan.style.marginLeft = '4rem'
-        newAmountSpan.style.color = '#007f5f'
+        newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
+        newDescriptionSpan.classList.add('descriptionspan')
+        newDescriptionSpan.classList.add('amountspan')
 
-        newIncomeDiv.append(newDescriptionSpan)
-        newIncomeDiv.append(newAmountSpan)
+        IncomeBar.append(newDescriptionSpan)
+        IncomeBar.append(newAmountSpan)
 
-        IncomeAdded.append(newIncomeDiv)
-
-        let prevIncomeAmount = IncomeAmount.innerHTML // initial it will be 0.00
+        let prevIncomeAmount = IncomeAmount.innerHTML
         let newIncomeAmount = parseInt(prevIncomeAmount) + parseInt(Amount.value)
         IncomeAmount.innerHTML = newIncomeAmount
-        let prevExpenseAmount = ExpenseAmount.innerHTML // initial it will be 0.00
+        let prevExpenseAmount = ExpenseAmount.innerHTML
         let newExpenseAmount = parseInt(prevExpenseAmount)
-        ExpenseAmount.innerHTML = newExpenseAmount
-        AvailableAmount.innerHTML = parseInt(newIncomeAmount) - parseInt(newExpenseAmount)
+        let TotalAvailableAmount = (parseInt(newIncomeAmount) - parseInt(newExpenseAmount))
+        AvailableAmount.innerHTML = TotalAvailableAmount
 
         Description.value = ''
         Amount.value = ''
@@ -57,36 +49,26 @@ function Income() {
 
 function Expense() {
     if (Description.value && Amount.value) {
-        let newExpenseDiv = document.createElement('div')
-        newExpenseDiv.style.backgroundColor = 'white'
-        newExpenseDiv.style.width = '16rem'
-        newExpenseDiv.style.height = '1.5rem'
-        newExpenseDiv.style.borderRadius = '1rem'
-        newExpenseDiv.style.marginBottom = '0.7rem'
-        newExpenseDiv.style.marginLeft = '0.6rem'
-        newExpenseDiv.style.paddingTop = '0.3rem'
+
+        ExpenseBar.classList.add('expenseadded')
 
         let newDescriptionSpan = document.createElement('span')
-        newDescriptionSpan.style.marginRight = '4rem'
-        newDescriptionSpan.innerText = Description.value
-
         let newAmountSpan = document.createElement('span')
-        newAmountSpan.style.marginLeft = '4rem'
-        newAmountSpan.style.color = '#d90429'
+        newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
+        newDescriptionSpan.classList.add('descriptionspan')
+        newDescriptionSpan.classList.add('amountspan')
 
-        newExpenseDiv.append(newDescriptionSpan)
-        newExpenseDiv.append(newAmountSpan)
+        ExpenseBar.append(newDescriptionSpan)
+        ExpenseBar.append(newAmountSpan)
 
-        ExpenseAdded.append(newExpenseDiv)
-
-        let prevExpenseAmount = ExpenseAmount.innerHTML // initial it will be 0.00
+        let prevExpenseAmount = ExpenseAmount.innerHTML
         let newExpenseAmount = parseInt(prevExpenseAmount) + parseInt(Amount.value)
         ExpenseAmount.innerHTML = newExpenseAmount
-        let prevIncomeAmount = IncomeAmount.innerHTML // initial it will be 0.00
+        let prevIncomeAmount = IncomeAmount.innerHTML
         let newIncomeAmount = parseInt(prevIncomeAmount)
-        IncomeAmount.innerHTML = newIncomeAmount
-        AvailableAmount.innerHTML = parseInt(newIncomeAmount) - parseInt(newExpenseAmount)
+        let TotalAvailableAmount = (parseInt(newIncomeAmount) - parseInt(newExpenseAmount))
+        AvailableAmount.innerHTML = TotalAvailableAmount
 
         Description.value = ''
         Amount.value = ''
@@ -95,6 +77,8 @@ function Expense() {
         alert('Input Amount')
     } else if (Amount.value) {
         alert('Input Description')
+    } else if (Amount.value != String) {
+        alert('Input a Number')
     } else {
         alert('Input Description and Amount')
     }

@@ -95,3 +95,37 @@ h2 {
 h1 {
     margin-bottom: 0.5rem;
 }
+
+.incomeadded {
+    background-color: white;
+    width: 16rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    margin-right: 0.8rem;
+    padding-top: 0.3rem;
+}
+
+.expenseadded {
+    background-color: white;
+    width: 16rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    margin-right: 0.8rem;
+    padding-top: 0.3rem;
+}
+
+.descriptionspan {
+    width: 8rem;
+    float: right;
+}
+
+.amountspan {
+    width: 8rem;
+    color: #007f5f;
+    float: left;
+
+}
