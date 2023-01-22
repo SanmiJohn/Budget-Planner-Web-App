@@ -10,30 +10,28 @@ let newIncomeDiv = document.querySelector('.newincomediv')
 const IncomeBar = document.getElementById('income')
 const ExpenseBar = document.getElementById('expense')
 
-IncomeButton.addEventListener('click', Income)
-ExpenseButton.addEventListener('click', Expense)
-
 function Income() {
     if (Description.value && Amount.value) {
 
-        IncomeBar.classList.add('incomeadded')
-
+        let newIncomeDisplay = document.createElement('div')
         let newDescriptionSpan = document.createElement('span')
         let newAmountSpan = document.createElement('span')
         newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
         newDescriptionSpan.classList.add('descriptionspan')
-        newDescriptionSpan.classList.add('amountspan')
+        newAmountSpan.classList.add('amountspan')
 
-        IncomeBar.append(newDescriptionSpan)
-        IncomeBar.append(newAmountSpan)
+        newIncomeDisplay.classList.add('incomeadded')
+        IncomeBar.appendChild(newIncomeDisplay)
+        IncomeBar.appendChild(newDescriptionSpan)
+        IncomeBar.appendChild(newAmountSpan)
 
         let prevIncomeAmount = IncomeAmount.innerHTML
-        let newIncomeAmount = parseInt(prevIncomeAmount) + parseInt(Amount.value)
+        let newIncomeAmount = new Intl.NumberFormat().format(parseFloat(prevIncomeAmount.replace(/,/g, '')) + parseFloat(Amount.value))
         IncomeAmount.innerHTML = newIncomeAmount
         let prevExpenseAmount = ExpenseAmount.innerHTML
-        let newExpenseAmount = parseInt(prevExpenseAmount)
-        let TotalAvailableAmount = (parseInt(newIncomeAmount) - parseInt(newExpenseAmount))
+        let newExpenseAmount = new Intl.NumberFormat().format(parseFloat(prevExpenseAmount.replace(/,/g, '')))
+        let TotalAvailableAmount = new Intl.NumberFormat().format(parseFloat(newIncomeAmount.replace(/,/g, '')) - parseFloat(newExpenseAmount))
         AvailableAmount.innerHTML = TotalAvailableAmount
 
         Description.value = ''
@@ -50,25 +48,25 @@ function Income() {
 function Expense() {
     if (Description.value && Amount.value) {
 
-        ExpenseBar.classList.add('expenseadded')
-
+        let newExpenseDisplay = document.createElement('div')
         let newDescriptionSpan = document.createElement('span')
         let newAmountSpan = document.createElement('span')
         newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
         newDescriptionSpan.classList.add('descriptionspan')
-        newDescriptionSpan.classList.add('amountspan')
+        newAmountSpan.classList.add('amountspan')
 
-        ExpenseBar.append(newDescriptionSpan)
-        ExpenseBar.append(newAmountSpan)
+        newExpenseDisplay.classList.add('expenseadded')
+        ExpenseBar.appendChild(newExpenseDisplay)
+        ExpenseBar.appendChild(newDescriptionSpan)
+        ExpenseBar.appendChild(newAmountSpan)
 
         let prevExpenseAmount = ExpenseAmount.innerHTML
-        let newExpenseAmount = parseInt(prevExpenseAmount) + parseInt(Amount.value)
+        let newExpenseAmount = new Intl.NumberFormat().format(parseFloat(prevExpenseAmount.replace(/,/g, '')) + parseFloat(Amount.value))
         ExpenseAmount.innerHTML = newExpenseAmount
         let prevIncomeAmount = IncomeAmount.innerHTML
-        let newIncomeAmount = parseInt(prevIncomeAmount)
-        let TotalAvailableAmount = (parseInt(newIncomeAmount) - parseInt(newExpenseAmount))
-        AvailableAmount.innerHTML = TotalAvailableAmount
+        let newIncomeAmount = new Intl.NumberFormat().format(parseFloat(prevIncomeAmount.replace(/,/g, '')))
+        AvailableAmount.innerHTML = new Intl.NumberFormat().format(parseFloat(newIncomeAmount) - parseFloat(newExpenseAmount))
 
         Description.value = ''
         Amount.value = ''
@@ -83,3 +81,6 @@ function Expense() {
         alert('Input Description and Amount')
     }
 }
+
+IncomeButton.addEventListener('click', Income)
+ExpenseButton.addEventListener('click', Expense)
