@@ -137,7 +137,11 @@ h1 {
     visibility: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
+
+    body {
+        background-color: #caf0f8;
+    }
 
     main {
         width: 20rem;
@@ -200,7 +204,7 @@ h1 {
         font-size: medium;
         margin-top: -3.2rem;
         padding-bottom: 0.5rem;
-        margin-left: 1.5rem;
+        margin-left: 1.4rem;
         display: flex;
         justify-content: center;
         border: 1px solid blue;
@@ -231,3 +235,5 @@ h1 {
         margin-bottom: 0.7rem;
     }
 }
+
+/* @media (max-width: 600px) {} */

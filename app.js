@@ -75,7 +75,7 @@ function Expense() {
         alert('Input Amount')
     } else if (Amount.value) {
         alert('Input Description')
-    } else if (Amount.value != String) {
+    } else if (Amount.value === String) {
         alert('Input a Number')
     } else {
         alert('Input Description and Amount')
