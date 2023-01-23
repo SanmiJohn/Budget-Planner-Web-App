@@ -179,23 +179,41 @@ h1 {
 
     .incomeadded {
         width: 8rem;
-        height: 1rem;
-        border-radius: 1rem;
+        height: 2.5rem;
+        margin-bottom: 0.7rem;
+        margin-right: 0.8rem;
+        margin-left: 1.5rem;
+        padding-top: 0.3rem;
+    }
+
+    .expenseadded {
+        width: 8rem;
+        height: 2.5rem;
+        align-items: center;
         margin-bottom: 0.7rem;
         margin-right: 0.8rem;
         padding-top: 0.3rem;
     }
 
     .descriptionspan {
-        width: 4rem;
-        margin-top: -2.2rem;
-        font-size: small;
+        width: 8rem;
+        font-size: medium;
+        margin-top: -3.2rem;
+        padding-bottom: 0.5rem;
+        margin-left: 1.5rem;
+        display: flex;
+        justify-content: center;
+        border: 1px solid blue;
     }
 
     .amountspan {
-        width: 4rem;
-        margin-top: -2.2rem;
-        font-size: small;
+        width: 8rem;
+        font-size: medium;
+        margin-right: 0.7rem;
+        padding-top: 2px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid blue;
     }
 
     article {
@@ -206,36 +224,10 @@ h1 {
     }
 
     #description {
-        border-radius: 10px;
-        border: none;
-        padding: 0.5rem;
-        width: 15rem;
         margin: 0.5rem;
     }
 
     #amount {
-        border-radius: 10px;
-        border: none;
-        padding: 0.5rem;
-        width: 5rem;
         margin-bottom: 0.7rem;
     }
-
-    #incomebtn {
-        border-radius: 10px;
-        border: none;
-        padding: 0.5rem 1rem;
-        background-color: #007f5f;
-        color: white;
-    }
-
-    #expensebtn {
-        border-radius: 10px;
-        border: none;
-        padding: 0.5rem 1rem;
-        margin-left: 0.4rem;
-        background-color: #d90429;
-        color: white;
-    }
-
 }
