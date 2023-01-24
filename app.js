@@ -14,8 +14,8 @@ function Income() {
     if (Description.value && Amount.value) {
 
         let newIncomeDisplay = document.createElement('div')
-        let newDescriptionSpan = document.createElement('span')
-        let newAmountSpan = document.createElement('span')
+        let newDescriptionSpan = document.createElement('div')
+        let newAmountSpan = document.createElement('div')
         newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
         newDescriptionSpan.classList.add('descriptionspan')
@@ -49,8 +49,8 @@ function Expense() {
     if (Description.value && Amount.value) {
 
         let newExpenseDisplay = document.createElement('div')
-        let newDescriptionSpan = document.createElement('span')
-        let newAmountSpan = document.createElement('span')
+        let newDescriptionSpan = document.createElement('div')
+        let newAmountSpan = document.createElement('div')
         newDescriptionSpan.innerText = Description.value
         newAmountSpan.innerText = Amount.value
         newDescriptionSpan.classList.add('descriptionspan')
@@ -75,8 +75,6 @@ function Expense() {
         alert('Input Amount')
     } else if (Amount.value) {
         alert('Input Description')
-    } else if (Amount.value === String) {
-        alert('Input a Number')
     } else {
         alert('Input Description and Amount')
     }
